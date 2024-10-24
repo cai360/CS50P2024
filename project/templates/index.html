@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>shift</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+    <h1>Hello {{name}}</h1>
+
+    <table border = 1>
+        <tr>
+            {% for date in date%}
+                <td> {{date["date"]}} </td>
+            {% endfor %}
+            <form action="{{  url_for('add_date') }}" methon = "post">
+                <input type="text" name="date_number">
+                <button type="submit">Add Date</button>
+            </form>
+        </tr>
+    </table>
+
+</body>
+</html>
